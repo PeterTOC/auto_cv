@@ -1,0 +1,87 @@
+---
+name: Peter
+surname: Boshe
+position: "Data Analyst"
+address: "KND/KAW/MZN 31/40,
+P.O. Box 60136,
+Dar es Salaam, Tanzania"
+phone: (+255)0769405758, (+255)0688372127
+www: peterboshe.netlify.app
+email: "peterboshe@gmail.com"
+github: PeterTOC
+linkedin: peterboshe
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::hyndman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+```
+
+# About me
+
+Well disciplined and enthusiastic data analyst with a strong background in
+project management and engineering, and a high aptitude for learning.
+
+# Skills
+
+> **Technical**
+: Data entry, data cleansing, exploratory data analysis, data visualization, dashboard building, data-driven decision making, supervised & unsupervised learning, relational databases, project management.
+
+
+> **Tools**
+: R programming, SQL, Spreadsheets, Git, Linux, Tableau, Microsoft PowerBI, HTML, Julia
+
+# Experience & Projects
+
+```{r}
+exp_proj <- tribble(
+  ~ position, ~ organization, ~ period, ~ location, ~ description,
+  "Freelance Data Analyst", "Upwork", "Sep 2021 - Present", "Remote", c("Bidding for posted data analysis tasks posted by clients on Upwork", "Work on custom orders received from the service offers posted on my page,
+including but not limited to; descriptive analysis, web-scraping, web research and data
+entry"),
+"Freelance Data Analyst", "Climatron Projects (Pty) Ltd", "Oct 2021 - Dec 2021", "Remote – South Africa/Dar", c("Provided support for an energy audit for a production mill by
+processing production data for KPI visualization", "which involved identifying trends, and successfully pinpointing; the equipment with the most frequent breakdowns, equipment breakdowns that resulted the stopping of production, and the least efficient mills"),
+"Freelance Data Analyst", "University of Passau", "Apr 2021 - Jun 2021", "Remote – Germany/Dar", c("Web-scrape for relevant data and presenting them in a manner that would simplify the decision making process in picking countries as case studies to assess the state and level of Data Protection Regulation in Africa", "Proofreading & File formatting"),
+"Technical Operations Coordinator", "Afritrack", "Dec 2018 - Sep 2021", "Dar es Salaam", c("Created Dashboards to display Technical Department KPIs, monitor Ticket resolution and Order fulfillment rates for the Service Delivery department", "Data Entry and uploading of info to the clients’ tracking portal on the back-end to
+facilitate asset monitoring", "Create dashboards and reports to surface data for different stakeholders, and provide analytical decision making support for key projects", "Create dashboards and reports to surface data for different stakeholders, and provide analytical decision making support for key projects", "Preparation of project material & tools requirements")
+)
+
+exp_proj |>
+  detailed_entries(what = position, where = organization, when = period, with = location, why = description, .protect = TRUE)
+
+```
+
+
+# Education
+
+```{r}
+
+edu <- tibble::tribble(
+  ~ degree, ~ period, ~ institution,
+  "Data Scientist with R Track", "July 2021 - Dec 2021", "DataCamp",
+  "Google Data Analytics Certificate", "May 2021 - Aug 2021", "Coursera, Google",
+  "Bachelor of Science in Civil and Structural Engineering", "Apr 2011 - Nov 2015", "University of Dar es Salaam"
+)
+
+edu |>
+  brief_entries(what = degree, when = period, with = institution, .protect = TRUE)
+```
+
+# Referees
+
+```{r}
+referees <- tribble(
+  ~ referee, ~ position, ~org, ~ contact,
+  "Ashraf Mukri", "General Manager", "Afritrack", c("email: ashraf@afritrack.com", "mobile: +255(0)655310582"), 
+  "Samson Mabula", "Customer Experience Manager", "Haifa Africa", c("email: mabulasam1@yahoo.com", "mobile: (+255)0759011690,0625929311"),
+  "Nguvumali Kamando", "Director of Digital Services", "Vodacom", c("email: nkamando1@gmail.com", "mobile: (+255)0754710297")
+)
+
+referees |> 
+  detailed_entries(what = position, when = referee, where = org, why = contact)
+```
+
+
